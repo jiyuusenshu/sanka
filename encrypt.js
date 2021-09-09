@@ -1,12 +1,13 @@
+  
 function extractDomain(url) {
 	var hostname;
 	if (url.indexOf("://") > -1) {hostname = url.split('/')[2];}
 	else {hostname = url.split('/')[0];}
 	hostname = hostname.split(':')[0];
 	hostname = hostname.split('?')[0];
-  console.log(hostname)
 	return hostname;
 }
+
 function exception(){
 	var exception = new Array();	
 	setting.exceptionurl = setting.exceptionurl;
@@ -34,6 +35,10 @@ function showurl(datajson){
 	var checklink = "";
 	var checkexception = "";	
 	var linktag = document.getElementsByTagName("a");
+  	for(let i=0;i  <linktag.length;i++){
+  if(linktag[i] =="a.jiulink"){var link_short = "https://exe.io/st?api=82fbde25b55035d283ebb8bc711df052e3241cdd&amp;url=";
+linktag[i].href=link_short+linktag[i].href }
+  }
 	var links =new Array();		
 
 	var semuaartikel = datajson.feed.openSearch$totalResults.$t;
@@ -61,7 +66,8 @@ function showurl(datajson){
 			no++;
 		}
 		if (check == false) {
-			linktag[i].href = links[randindex] + setting.path + aesCrypto.encrypt(convertstr(linktag[i].href),convertstr('root'));
+      let xx="https://addtop1.blogspot.com/p/out.html?&&url=_"
+			linktag[i].href = xx+links[randindex] + setting.path + aesCrypto.encrypt(convertstr(linktag[i].href),convertstr('root'));
 			linktag[i].rel = "nofollow";
 			linktag[i].target = "_blank";
 		}
