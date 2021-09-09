@@ -36,7 +36,7 @@ function showurl(datajson){
 	var checkexception = "";	
 	var linktag = document.getElementsByTagName("a");
   	for(let i=0;i  <linktag.length;i++){
-  if(linktag[i] =="a.jiulink"){var link_short = "https://exe.io/st?api=82fbde25b55035d283ebb8bc711df052e3241cdd&amp;url=";
+  if(linktag[i] =="a.jiulink"){var link_short = "https://exe.io/st?api=82fbde25b55035d283ebb8bc711df052e3241cdd&url=";
 linktag[i].href=link_short+linktag[i].href }
   }
 	var links =new Array();		
